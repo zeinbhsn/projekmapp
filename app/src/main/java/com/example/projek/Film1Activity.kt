@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.content.Intent
+
 class Film1Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,16 @@ class Film1Activity : AppCompatActivity() {
         tvKembali.setOnClickListener {
             // Kode untuk kembali ke halaman sebelumnya
             onBackPressed()
+        }
+
+        // Temukan Button "Pesan"
+        val btnPesan: Button = findViewById(R.id.btnPesan)
+
+        // Atur OnClickListener untuk "Pesan"
+        btnPesan.setOnClickListener {
+            // Berpindah ke SimpleCalculatingActivity saat tombol "Pesan" diklik
+            val intent = Intent(this@Film1Activity, SimpleCalculatingActivity::class.java)
+            startActivity(intent)
         }
     }
 }

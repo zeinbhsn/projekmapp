@@ -20,5 +20,15 @@ class Film2Activity : AppCompatActivity() {
             // Kode untuk kembali ke halaman sebelumnya
             onBackPressed()
         }
+
+        // Temukan Button "Pesan"
+        val btnPesan: Button = findViewById(R.id.btnPesan)
+
+        // Atur OnClickListener untuk "Pesan"
+        btnPesan.setOnClickListener {
+            // Berpindah ke SimpleCalculatingActivity saat tombol "Pesan" diklik
+            val intent = Intent(this@Film2Activity, SimpleCalculatingActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

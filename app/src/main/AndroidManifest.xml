@@ -18,9 +18,11 @@
         <activity
             android:name=".seatactivity"
             android:exported="false" />
-        <activity
-            android:name=".pilihkursiactivity"
-            android:exported="false" />
+
+        <activity android:name=".SimpleCalculatingActivity">
+            <!-- Tambahkan intent filters atau atribut lain yang diperlukan -->
+        </activity>
+
         <activity
             android:name=".Film6Activity"
             android:exported="false" />
