@@ -22,12 +22,12 @@ class SimpleCalculatingActivity : AppCompatActivity() {
 
         val inputText = input.text.toString()
         if (inputText.isEmpty()) {
-            resultTextView.text = "Please enter a number."
+            resultTextView.text = "Masukan Jumlah Tiket."
             return
         }
 
         val inputNumber = inputText.toInt()
         val result = inputNumber * 35000
-        resultTextView.text = "Result: $result ribu"
+        resultTextView.text = "Result: Rp. $result"
     }
 }

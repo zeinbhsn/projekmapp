@@ -11,9 +11,9 @@ import android.content.Intent
 class MainActivity : AppCompatActivity() {
 
     lateinit var btnlogin: Button
-    lateinit var etusername : EditText
-    lateinit var etpassword : EditText
-    lateinit var txtlogin : TextView
+    lateinit var etusername: EditText
+    lateinit var etpassword: EditText
+    lateinit var txtlogin: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,29 +24,33 @@ class MainActivity : AppCompatActivity() {
         etpassword = findViewById(R.id.et_password)
         txtlogin = findViewById(R.id.txt_login)
 
+
         btnlogin.setOnClickListener {
-
             // Mengambil nilai username dan password dari EditText
-            var username = etusername.text.toString()
-            var password = etpassword.text.toString()
+            val username = etusername.text.toString()
+            val password = etpassword.text.toString()
 
-            // Mencetak username dan password (Anda dapat menyimpannya ke dalam file, database, atau melakukan sesuatu yang lain sesuai kebutuhan)
-            println("Username: $username")
-            println("Password: $password")
+            // Mengecek apakah password kosong
+            if (password.isEmpty()) {
+                // Menampilkan peringatan jika password kosong
+                etpassword.error = "Harap masukkan password"
+            } else {
+                // Mencetak username dan password (Anda dapat menyimpannya ke dalam file, database, atau melakukan sesuatu yang lain sesuai kebutuhan)
+                println("Username: $username")
+                println("Password: $password")
 
-            // Buat Intent untuk berpindah ke halaman selanjutnya (HalamanFilmActivity)
-            val intent = Intent(this@MainActivity, HalamanFilmActivity::class.java)
+                // Buat Intent untuk berpindah ke halaman selanjutnya (HalamanFilmActivity)
+                val intent = Intent(this@MainActivity, HalamanFilmActivity::class.java)
 
 
-            // Jika Anda ingin membawa data ke halaman selanjutnya, Anda dapat menggunakan putExtra
-            // intent.putExtra("key", value)
+                // Jika Anda ingin membawa data ke halaman selanjutnya, Anda dapat menggunakan putExtra
+                // intent.putExtra("key", value)
 
-            // Mulai aktivitas baru
-            startActivity(intent)
+                // Mulai aktivitas baru
+                startActivity(intent)
+            }
+
+
         }
-
-
-
-
     }
 }
