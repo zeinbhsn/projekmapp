@@ -28,6 +28,6 @@ class SimpleCalculatingActivity : AppCompatActivity() {
 
         val inputNumber = inputText.toInt()
         val result = inputNumber * 35000
-        resultTextView.text = "Result: Rp. $result"
+        resultTextView.text = "TOTAL: Rp. $result"
     }
 }
